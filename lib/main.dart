@@ -45,7 +45,7 @@ class ShoppingList extends StatelessWidget{
         Item(label:"beurre"),
         Item(label:"jambon"),
         Item(label:"fromage"),
-        Item(label:"pain"),
+        Item(label:"lait"),
         Item(label:"Kellogg's"),
       ],
     );
