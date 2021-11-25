@@ -52,16 +52,26 @@ class ShoppingList extends StatelessWidget{
   }
 }
 
-class Item extends StatelessWidget{
+class Item extends StatefulWidget{
   final String label;
 
   const Item({Key? key, required this.label}) : super(key: key);
+
+  @override
+  State<Item> createState() => _ItemState();
+}
+
+class _ItemState extends State<Item> {
+  bool?_value=false;
   @override
   Widget build(BuildContext context){
     return Row(
       children: [
-        Checkbox(value: false, onChanged: null),
-        Text(label),
+        Checkbox(
+        value: _value,
+        onChanged: (newValue)=> setState(()=>_value = newValue)
+    ),
+        Text(widget.label),
       ],
     );
 
