@@ -17,6 +17,19 @@ class MyFirstApp extends StatelessWidget{
 class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: Text("Liste courses"),),
+      body: Column(
+        children: [ Progess(),],
+      ),
+    );
+  }
+}
+class Progess extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Column(
+      children: [ Text('vous avancez dans vos courses :'), LinearProgressIndicator(value: 0.0),],
+    );
   }
 }
