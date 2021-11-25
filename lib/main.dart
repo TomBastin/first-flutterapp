@@ -20,7 +20,10 @@ class MyHomePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: Text("Liste courses"),),
       body: Column(
-        children: [ Progess(),],
+        children: [
+          Progess(),
+          ShoppingList(),
+        ],
       ),
     );
   }
@@ -31,5 +34,36 @@ class Progess extends StatelessWidget{
     return Column(
       children: [ Text('vous avancez dans vos courses :'), LinearProgressIndicator(value: 0.0),],
     );
+  }
+}
+
+class ShoppingList extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Column(
+      children: [
+        Item(label:"beurre"),
+        Item(label:"jambon"),
+        Item(label:"fromage"),
+        Item(label:"pain"),
+        Item(label:"Kellogg's"),
+      ],
+    );
+  }
+}
+
+class Item extends StatelessWidget{
+  final String label;
+
+  const Item({Key? key, required this.label}) : super(key: key);
+  @override
+  Widget build(BuildContext context){
+    return Row(
+      children: [
+        Checkbox(value: false, onChanged: null),
+        Text(label),
+      ],
+    );
+
   }
 }
