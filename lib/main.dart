@@ -31,8 +31,9 @@ class MyHomePage extends StatelessWidget{
 class Progess extends StatelessWidget{
   @override
   Widget build(BuildContext context){
+    double _progessValue=0.0;
     return Column(
-      children: [ Text('vous avancez dans vos courses :'), CircularProgressIndicator(value: 0.2, backgroundColor: Colors.grey),],
+      children: [ Text('vous avancez dans vos courses :'), CircularProgressIndicator(value: _progessValue, backgroundColor: Colors.grey),],
     );
   }
 }
@@ -69,7 +70,7 @@ class _ItemState extends State<Item> {
       children: [
         Checkbox(
         value: _value,
-        onChanged: (newValue)=> setState(()=>_value = newValue)
+        onChanged: (newValue)=> setState(()=>_value = newValue),_progressValue +=0.2
     ),
         Text(widget.label),
       ],
