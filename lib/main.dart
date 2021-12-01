@@ -32,7 +32,7 @@ class Progess extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Column(
-      children: [ Text('vous avancez dans vos courses :'), LinearProgressIndicator(value: 0.0),],
+      children: [ Text('vous avancez dans vos courses :'), CircularProgressIndicator(value: 0.2, backgroundColor: Colors.grey),],
     );
   }
 }
